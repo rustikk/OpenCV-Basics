@@ -1,0 +1,46 @@
+#resizing
+#resizing simply just means changing the images width and height
+
+#keep in mind the aspect ratio, the ratio of the width and height to each other when resizing images, else they tend to look distorted
+
+#its more visually pleasing to decrease images than increase them
+
+#the larger the image the more data and the longer it takes for algorithms to process them.
+
+#large resolution images are almost always downsampled to help image processing systems run faster and be more accurate
+
+#cv2.resize() is not aspect-ratio aware
+
+#imutils.rotate() is aspect ratio aware
+
+
+
+#different opencv interpolation method
+
+#nearest-neighbor interpolation
+#cv2.INTER_NEAREST()
+#this method is the simplest approach. This method finds the nearest neighboring pixel and assumes the intensity value. while fast the images quality is usually poor, and can lead to "blocky" artifacts
+
+#bilinear interpolation
+#cv2.INTER_LINEAR()
+#The method that opencv uses by default.
+#This algorithm  takes neighboring pixels and uses this neighborhood to calculate the interpolated value
+
+#Inter-area interpolation
+#cv2.INTER_AREA()
+
+#Inter-cubic interpolation
+#cv2.INTER_CUBIC
+#This algorithm operates on a 4x4 pixel neighbor
+
+#Inter-lanczos4 interpolation
+#cv2.INTER_LANCZOS4()
+#This algorithm operates on a 8x8 pixel neighbor
+
+
+#best algorithms for upsampling (increasing the size):
+#cv2.INTER_LINEAR and cv2.INTER_CUBIC
+#cv2.INTER_LINEAR is faster but use whatever method looks better
+
+#best algorithms for downsampling (decreasing the size)
+cv2.INTER_AREA or cv2.INTER_NEAREST for faster results
